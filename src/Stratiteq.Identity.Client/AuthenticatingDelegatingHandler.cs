@@ -10,7 +10,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Stratiteq.IdentityClient
+namespace Stratiteq.Identity.Client
 {
     /// <summary>
     /// A delegating handler that authenticates with an IIdentityClient.

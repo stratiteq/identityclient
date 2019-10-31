@@ -5,8 +5,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Stratiteq.Identity.Client;
 using Stratiteq.Identity.Client.AAD;
-using Stratiteq.IdentityClient;
 using System.IO;
 
 namespace AADIdentityClientSample

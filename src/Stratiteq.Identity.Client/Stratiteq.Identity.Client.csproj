@@ -33,8 +33,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Stratiteq.Identity.Client.Abstractions\Stratiteq.Identity.Client.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>
