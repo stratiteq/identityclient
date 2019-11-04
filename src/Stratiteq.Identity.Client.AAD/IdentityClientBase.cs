@@ -5,6 +5,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Client;
 using Stratiteq.Identity.Client.Abstractions;
+using Stratiteq.Identity.Client.Extensions;
 using Stratiteq.Microservices.X509Certificate;
 using System;
 using System.Threading.Tasks;
@@ -36,6 +37,12 @@ namespace Stratiteq.Identity.Client.AAD
 
             if (this.confidentialClientApplication == null)
             {
+                ValidationResult validationResult = this.aadAppConfiguration.ValidationResult();
+                if (!validationResult.Success)
+                {
+                    throw new ArgumentException(validationResult.Message);
+                }
+
                 if (!string.IsNullOrEmpty(this.aadAppConfiguration.CertificateSubjectName))
                 {
                     this.confidentialClientApplication = ConfidentialClientApplicationBuilder.Create(this.aadAppConfiguration.ClientId)
