@@ -32,11 +32,9 @@ steps:
     command: 'test'
     projects: 'tests/**/*.csproj'
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet pack'
+- task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.nuspec'
-    nobuild: true
+    packagesToPack: '**/*.nuspec'
     versioningScheme: 'off'
 
