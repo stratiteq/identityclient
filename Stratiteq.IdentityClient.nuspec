@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Stratiteq.Identity.Client.AAD</id>
+    <version>1.0.0</version>
+    <authors>Stratiteq Sweden AB</authors>
+    <owners>Stratiteq Sweden AB</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/stratiteq/identityclient</projectUrl>
+    <iconUrl>https://www.stratiteq.com/wp-content/uploads/sq-logo-black-64x64.png</iconUrl>
+    <description>Stratiteq.Identity.Client.AAD</description>
+    <repository url="https://github.com/stratiteq/identityclient" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Identity.Client" version="4.5.1" exclude="Build,Analyzers" />
+        <dependency id="Stratiteq.Microservices.X509Certificate" version="1.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\netstandard2.0\*.dll" target="lib\netstandard2.0\"/>
+    <file src="bin\$configuration$\netstandard2.0\*.xml" target="lib\netstandard2.0\"/>
+  </files>
+</package>

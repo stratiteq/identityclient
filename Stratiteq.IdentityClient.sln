@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Identity.Client.AAD", "src\Stratiteq.Identity.Client.AAD\Stratiteq.Identity.Client.AAD.csproj", "{22771367-56E1-45E7-9FB9-AA1AB2C01899}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Identity.Client", "src\Stratiteq.Identity.Client\Stratiteq.Identity.Client.csproj", "{9075BA27-9949-449E-A153-F642A2353404}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{551C3C0E-B9A7-468D-A66B-CB1AFB332B12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AADIdentityClientSample", "samples\AADIdentityClientSample\AADIdentityClientSample.csproj", "{3A885FBF-7724-4488-B7E4-45F4A2EB620A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22771367-56E1-45E7-9FB9-AA1AB2C01899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22771367-56E1-45E7-9FB9-AA1AB2C01899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22771367-56E1-45E7-9FB9-AA1AB2C01899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22771367-56E1-45E7-9FB9-AA1AB2C01899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9075BA27-9949-449E-A153-F642A2353404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9075BA27-9949-449E-A153-F642A2353404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9075BA27-9949-449E-A153-F642A2353404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9075BA27-9949-449E-A153-F642A2353404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A885FBF-7724-4488-B7E4-45F4A2EB620A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A885FBF-7724-4488-B7E4-45F4A2EB620A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A885FBF-7724-4488-B7E4-45F4A2EB620A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A885FBF-7724-4488-B7E4-45F4A2EB620A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A885FBF-7724-4488-B7E4-45F4A2EB620A} = {551C3C0E-B9A7-468D-A66B-CB1AFB332B12}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30E58463-C903-49FF-BAE2-ECAAF8F855FE}
+	EndGlobalSection
+EndGlobal
