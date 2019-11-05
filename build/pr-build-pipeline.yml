@@ -16,18 +16,29 @@ steps:
   displayName: 'dotnet restore from feed'
   inputs:
     command: 'restore'
-    projects: '$(parameters.projects)'
+    projects: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
-    projects: '$(parameters.projects)'
+    command: 'build'
+    projects: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     arguments: '--configuration $(BuildConfiguration)'
-    versioningScheme: byBuildNumber
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet test'
   inputs:
     command: 'test'
     projects: 'tests/**/*.csproj'
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: '5.x'
+    checkLatest: true
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.nuspec'
+    versioningScheme: 'off'
