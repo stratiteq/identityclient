@@ -32,6 +32,11 @@ steps:
     command: 'test'
     projects: 'tests/**/*.csproj'
 
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: '5.x'
+    checkLatest: true
+
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
