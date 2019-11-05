@@ -24,7 +24,7 @@ namespace Stratiteq.Identity.Client
         /// Initializes a new instance of the <see cref="AuthenticatingDelegatingHandler{T}"/> class.
         /// </summary>
         /// <param name="identityClient">An implementation of IIdentityClient.</param>
-        public AuthenticatingDelegatingHandler(IIdentityClient identityClient)
+        public AuthenticatingDelegatingHandler(T identityClient)
         {
             this.identityClient = identityClient ?? throw new ArgumentNullException(nameof(identityClient));
         }
