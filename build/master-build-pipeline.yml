@@ -16,15 +16,15 @@ steps:
   displayName: 'dotnet restore from feed'
   inputs:
     command: 'restore'
-    projects: '$(parameters.projects)'
+    projects: '/src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
-    projects: '$(parameters.projects)'
+    command: 'build'
+    projects: '/src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     arguments: '--configuration $(BuildConfiguration)'
-    versioningScheme: byBuildNumber
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet test'
@@ -36,8 +36,9 @@ steps:
   displayName: 'dotnet pack'
   inputs:
     command: 'pack'
-    packagesToPack: '$(parameters.projects)'
+    packagesToPack: '/src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.nuspec'
     nobuild: true
+    versioningScheme: 'off'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet push'
@@ -45,5 +46,5 @@ steps:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: '$(parameters.artifact-feed)'
+    publishVstsFeed: '$(artifact-feed)'
     versioningScheme: off
