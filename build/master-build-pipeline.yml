@@ -43,3 +43,10 @@ steps:
     packagesToPack: '**/*.nuspec'
     versioningScheme: 'off'
 
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet push'
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: '$(artifact-feed)'
