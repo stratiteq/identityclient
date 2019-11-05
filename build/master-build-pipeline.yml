@@ -16,14 +16,14 @@ steps:
   displayName: 'dotnet restore from feed'
   inputs:
     command: 'restore'
-    projects: '/src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
+    projects: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
     command: 'build'
-    projects: '/src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
+    projects: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
@@ -36,7 +36,7 @@ steps:
   displayName: 'dotnet pack'
   inputs:
     command: 'pack'
-    packagesToPack: '/src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.nuspec'
+    packagesToPack: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.nuspec'
     nobuild: true
     versioningScheme: 'off'
 
