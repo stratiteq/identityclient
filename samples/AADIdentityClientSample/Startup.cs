@@ -41,13 +41,13 @@ namespace AADIdentityClientSample
             // These need to be transient so that a new instance is provided each time a new HttpClient is created.
             services.AddTransient<AuthenticatingDelegatingHandler<Service1IdentityClient>>();
 
-            services.AddHttpClient<Service1ApiHttpClient>(client =>
+            services.AddHttpClient<IService1ApiHttpClient, Service1ApiHttpClient>(client =>
             {
                 client.BaseAddress = new System.Uri("https://localhost:44303/");
                 client.DefaultRequestHeaders.Add("Accept", "application/json");
             }).AddHttpMessageHandler<AuthenticatingDelegatingHandler<Service1IdentityClient>>();
 
-            services.AddTransient<IService1WebApi, Service1WebApi>();
+            services.AddSingleton<IService1WebApi, Service1WebApi>();
         }
 
         public void Configure()
