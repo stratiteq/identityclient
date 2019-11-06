@@ -75,7 +75,7 @@ namespace Stratiteq.Identity.Client.AAD
         {
             var errors = new List<string>();
 
-            if (string.IsNullOrEmpty(this.CertificateSubjectName) || string.IsNullOrEmpty(this.ClientSecret))
+            if (string.IsNullOrEmpty(this.CertificateSubjectName) && string.IsNullOrEmpty(this.ClientSecret))
             {
                 errors.Add("Configuration is not valid. Please provide CertificateSubjectName or ClientSecret.");
             }
