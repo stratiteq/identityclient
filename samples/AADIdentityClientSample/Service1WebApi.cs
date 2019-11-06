@@ -2,6 +2,7 @@
 //
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System;
 using System.Threading.Tasks;
 
 namespace AADIdentityClientSample
@@ -17,7 +18,13 @@ namespace AADIdentityClientSample
 
         public async Task ExecuteAsync()
         {
-            await this.service1ApiHttpClient.GetAsync();
+            try
+            {
+                await this.service1ApiHttpClient.GetAsync();
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

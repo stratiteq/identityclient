@@ -15,11 +15,6 @@ namespace AADIdentityClientSample
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLogging(configure =>
-                configure
-                    .AddDebug()
-                    .AddConsole());
-
             // Build config
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -27,15 +22,30 @@ namespace AADIdentityClientSample
                 .AddEnvironmentVariables()
                 .Build();
 
+            services.AddLogging(logging =>
+            {
+                logging.AddConfiguration(configuration.GetSection("Logging"));
+                logging.AddDebug();
+                logging.AddConsole();
+            }).Configure<LoggerFilterOptions>(options => options.MinLevel = LogLevel.Debug);
+
             // Add access to generic IConfigurationRoot
             services.AddSingleton<IConfiguration>(configuration);
 
             // Add services
             services.AddTransient<App>();
 
+            var appConfiguration =
+                new AADAppConfiguration(
+                    "",
+                    "",
+                    "",
+                    "",
+                    string.Empty);
+
             services.AddSingleton<Service1IdentityClient>(serviceProvider =>
                 new Service1IdentityClient(
-                    new AADAppConfiguration(configuration.GetSection("Service1")),
+                    appConfiguration,
                     serviceProvider.GetService<ILogger<Service1IdentityClient>>()));
 
             // These need to be transient so that a new instance is provided each time a new HttpClient is created.

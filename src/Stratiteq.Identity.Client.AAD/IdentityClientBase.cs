@@ -66,6 +66,9 @@ namespace Stratiteq.Identity.Client.AAD
                     .ExecuteAsync();
 
                 this.logger?.LogInformation("Token requested successfully.");
+                this.logger?.LogDebug($"Access token: {result.AccessToken}");
+                this.logger?.LogDebug($"Expires on  : {result.ExpiresOn}");
+                this.logger?.LogDebug($"Scopes      : {string.Join(";", result.Scopes)}");
             }
             catch (MsalException e)
             {
