@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/stratiteq/identityclient</RepositoryUrl>
     <PackageIconUrl>https://www.stratiteq.com/wp-content/uploads/sq-logo-black-64x64.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>..\..\project.ruleset</CodeAnalysisRuleSet>
     <NoWarn />
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
