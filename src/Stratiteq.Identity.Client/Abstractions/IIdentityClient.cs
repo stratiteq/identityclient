@@ -15,6 +15,6 @@ namespace Stratiteq.Identity.Client.Abstractions
         /// Request token from the identity client.
         /// </summary>
         /// <returns>A valid access token for the endpoint.</returns>
-        Task<string> RequestTokenAsync();
+        Task<string?> RequestTokenAsync();
     }
 }

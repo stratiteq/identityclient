@@ -32,7 +32,7 @@ namespace Stratiteq.Identity.Client
         /// <inheritdoc/>
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            string accessToken = await this.identityClient.RequestTokenAsync();
+            string? accessToken = await this.identityClient.RequestTokenAsync();
 
             if (string.IsNullOrEmpty(accessToken))
             {

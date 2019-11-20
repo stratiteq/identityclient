@@ -31,7 +31,7 @@ namespace Stratiteq.Identity.Client.AAD
         }
 
         /// <inheritdoc/>
-        public async Task<string> RequestTokenAsync()
+        public async Task<string?> RequestTokenAsync()
         {
             this.logger?.LogInformation("Requesting token from identity provider.");
 
@@ -59,7 +59,7 @@ namespace Stratiteq.Identity.Client.AAD
                 }
             }
 
-            AuthenticationResult result;
+            AuthenticationResult? result;
             try
             {
                 result = await this.confidentialClientApplication.AcquireTokenForClient(this.aadAppConfiguration.Scopes)
