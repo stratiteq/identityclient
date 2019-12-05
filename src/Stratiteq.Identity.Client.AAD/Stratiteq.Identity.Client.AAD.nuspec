@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Stratiteq.Identity.Client.AAD</id>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <authors>Stratiteq Sweden AB</authors>
     <owners>Stratiteq Sweden AB</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,7 +16,7 @@
       <group targetFramework=".NETStandard2.0">
         <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="3.0.0" exclude="Build,Analyzers" />
         <dependency id="Microsoft.Extensions.Logging.Abstractions" version="3.0.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.Identity.Client" version="4.5.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Identity.Client" version="4.7.1" exclude="Build,Analyzers" />
         <dependency id="Stratiteq.Microservices.X509Certificate" version="1.0.1" exclude="Build,Analyzers" />
       </group>
     </dependencies>
