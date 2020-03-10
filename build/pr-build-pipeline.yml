@@ -39,6 +39,7 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
+    displayName: 'dotnet pack'
     command: 'pack'
     packagesToPack: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     versioningScheme: 'off'
