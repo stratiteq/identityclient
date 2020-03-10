@@ -12,6 +12,11 @@ variables:
 
 steps:
 
+- task: UseDotNet@2
+  inputs:
+    version: '3.1.x'
+    packageType: sdk
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore from feed'
   inputs:
@@ -32,13 +37,9 @@ steps:
     command: 'test'
     projects: 'tests/**/*.csproj'
 
-- task: NuGetToolInstaller@1
+- task: DotNetCoreCLI@2
   inputs:
-    versionSpec: '5.x'
-    checkLatest: true
-
-- task: NuGetCommand@2
-  inputs:
+    displayName: 'dotnet pack'
     command: 'pack'
-    packagesToPack: '**/*.nuspec'
+    packagesToPack: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
     versioningScheme: 'off'
