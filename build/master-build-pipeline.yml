@@ -11,6 +11,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: UseDotNet@2
+inputs:
+  version: '3.1.x'
+  packageType: sdk
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet restore from feed'
@@ -32,21 +36,17 @@ steps:
     command: 'test'
     projects: 'tests/**/*.csproj'
 
-- task: NuGetToolInstaller@1
-  inputs:
-    versionSpec: '5.x'
-    checkLatest: true
-
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.nuspec'
+    packagesToPack: 'src/Stratiteq.Identity.Client.AAD/Stratiteq.Identity.Client.AAD.csproj'
+    nobuild: true
     versioningScheme: 'off'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet push'
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg;$(Build.ArtifactStagingDirectory)/*.snupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '$(artifact-feed)'
